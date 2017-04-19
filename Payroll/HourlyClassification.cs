@@ -6,10 +6,13 @@ namespace Payroll
 	{
 		private static double _hourlyRate;
 
-		public HourlyClassification(double hourlyRate)
+		public HourlyClassification()
 		{
+			double hourlyRate = 0;
 			_hourlyRate = hourlyRate;
 		}
+
+		public double HourlyRate => _hourlyRate;
 
 		public double Salary => _hourlyRate * 8.0;
 

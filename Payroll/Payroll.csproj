@@ -50,6 +50,7 @@
     <Compile Include="BiweeklyScheddule.cs" />
     <Compile Include="ChangeAddressTransaction.cs" />
     <Compile Include="ChangeEmployeeTransaction.cs" />
+    <Compile Include="ChangeHourlyTransaction.cs" />
     <Compile Include="ChangeNameTransaction.cs" />
     <Compile Include="CommissionedClassification.cs" />
     <Compile Include="DeleteEmployee.cs" />

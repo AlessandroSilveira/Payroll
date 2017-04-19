@@ -2,8 +2,5 @@
 {
 	public class WeeklySchedule
 	{
-		public WeeklySchedule()
-		{
-		}
 	}
 }

@@ -10,7 +10,8 @@ namespace Payroll
 		{
 			this.empId = empId;
 		}
-		
+
+		protected abstract PaymentClassification Classification { }
 
 
 		public void Execute()
