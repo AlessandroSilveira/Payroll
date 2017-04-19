@@ -21,5 +21,9 @@ namespace Payroll
 		}
 
 		//public SalesReceipt GetSalesReceipt(int id, DateTime dateTime) => PayrollDatabase.GetSalesReceipt(id,dateTime);
+		public SalesReceipt GetSalesReceipt( DateTime dateTime)
+		{
+			return new SalesReceipt(dateTime,3.0);
+		}
 	}
 }

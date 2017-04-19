@@ -12,22 +12,22 @@ namespace PayrollTest
 		{
 			int empId = 2;
 
-			AddHourlyEmployee t = new AddHourlyEmployee(empId,"Bill","Home",15.25);
+			var t = new AddHourlyEmployee(empId,"Bill","Home",15.25);
 			t.Execute();
 
-			Employee e = PayrollDatabase.GetEmployee(empId);
+			var e = PayrollDatabase.GetEmployee(empId);
 			Assert.IsNotNull(e);
 
-			UnionAffiliation af = new UnionAffiliation();
+			var af = new UnionAffiliation();
 			e.Affiliation = af;
-			int memberId = 8;
+			int memberId = 86;
 			PayrollDatabase.AddUnionMember(memberId, e);
-			ServiceChargeTransaction sct = new ServiceChargeTransaction(new DateTime(2017,04,19),memberId,12.95 );
+			var sct = new ServiceChargeTransaction(new DateTime(2017,04,19),memberId, 12.95);
 			sct.Execute();
 
-			ServiceCharge sc = af.GetServiceCharge(new DateTime(2017, 04, 19));
+			var sc = af.GetServiceCharge(new DateTime(2017, 04, 19));
 			Assert.IsNotNull(sc);
-			Assert.AreEqual(12.95,sc.Amount,.001);
+			Assert.AreEqual(12.95, sc.Amount, .001);
 
 		}
 	}

@@ -4,22 +4,17 @@ namespace Payroll
 {
 	public class ServiceChargeTransaction : ITransaction
 	{
-		private readonly int _memberId;
-		private readonly DateTime _time;
-		private readonly double _charge;
-		
-
-		public ServiceChargeTransaction(DateTime time, int memberId, double charge)
+		public ServiceChargeTransaction(DateTime time, int memberId, double amount)
 		{
-			_time = time;
-			this._memberId = memberId;
-			this._charge = charge;
+			Time = time;
+			MemberId = memberId;
+			Amount = amount;
 		}
 
+		public DateTime Time { get; }
+		public int MemberId { get; }
+		public double Amount { get; }
 
-		public DateTime Time => _time;
-		public int MemberId => _memberId;
-		public double Charge => _charge;
 		public void Execute()
 		{
 			var e = PayrollDatabase.GetUnionMember(MemberId);
@@ -31,11 +26,10 @@ namespace Payroll
 				if (ua == null)
 					throw new InvalidOperationException("Tries to add service charge to union" + "Member without a union affiliation");
 				else
-					ua.AddServiceCharge(new ServiceCharge(Time, Charge));
+					ua.AddServiceCharge(new ServiceCharge(Time, Amount));
 			}
 			else
 				throw new InvalidOperationException("No such member");
-			
 		}
 	}
 }

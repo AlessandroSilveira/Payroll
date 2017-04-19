@@ -23,7 +23,7 @@ namespace PayrollTest
 			Assert.IsTrue(pc is CommissionedClassification);
 			var hc = pc as CommissionedClassification;
 
-			var tc = hc.GetSalesReceipt(empId,new DateTime(2017, 04, 17));
+			var tc = hc.GetSalesReceipt(new DateTime(2017, 04, 17));
 			Assert.IsNotNull(tc);
 
 		}

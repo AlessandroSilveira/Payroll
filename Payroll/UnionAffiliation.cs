@@ -4,20 +4,18 @@ namespace Payroll
 {
 	public class UnionAffiliation
 	{
-		private readonly DateTime _date;
-		private readonly double _amount;
+		public DateTime Date { get; }
 
-		public DateTime Date => _date;
-		public double Amount => _amount;
+		public double Charge { get; }
 
 		public ServiceCharge GetServiceCharge(DateTime dateTime)
 		{
-			return new ServiceCharge(Date,Amount);
+			return new ServiceCharge(Date, Charge);
 		}
 
 		public void AddServiceCharge(ServiceCharge serviceCharge)
 		{
-			var charge = new ServiceCharge(serviceCharge.Date, serviceCharge.Amount);
+			 new ServiceCharge(serviceCharge.Date, serviceCharge.Amount);
 		}
 	}
 }

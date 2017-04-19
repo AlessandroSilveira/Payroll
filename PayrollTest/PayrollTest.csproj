@@ -60,6 +60,8 @@
     <Compile Include="DeleteEmployeeTest.cs" />
     <Compile Include="TestAddSalariedEmployee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestChangeAdressTransaction.cs" />
+    <Compile Include="TestChangeNameTransaction.cs" />
     <Compile Include="TestSalesReceiptTransaction.cs" />
     <Compile Include="TestTimeCardTransaction.cs" />
   </ItemGroup>
