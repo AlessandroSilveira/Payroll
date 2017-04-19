@@ -50,7 +50,7 @@ namespace PayrollTest
 
 		}
 
-
+		[Test]
 		public void TestChangeHourlyTransaction()
 		{
 			int empId = 3;
@@ -58,7 +58,7 @@ namespace PayrollTest
 			AddCommissionedEmployee t = new AddCommissionedEmployee(empId,"Lance","Home",2500,3.2);
 			t.Execute();
 
-			ChangeHourlyTransaction cht = new ChangeHourlyTransaction(empId,27.52);
+			var cht = new ChangeHourlyTransaction(empId, 27.52);
 			cht.Execute();
 
 			Employee e = PayrollDatabase.GetEmployee(empId);

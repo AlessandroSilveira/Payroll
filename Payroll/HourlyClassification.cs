@@ -5,11 +5,17 @@ namespace Payroll
 	public class HourlyClassification : PaymentClassification
 	{
 		private static double _hourlyRate;
+		private double hourlyRate;
 
 		public HourlyClassification()
 		{
 			double hourlyRate = 0;
 			_hourlyRate = hourlyRate;
+		}
+
+		public HourlyClassification(double hourlyRate)
+		{
+			this.hourlyRate = hourlyRate;
 		}
 
 		public double HourlyRate => _hourlyRate;
