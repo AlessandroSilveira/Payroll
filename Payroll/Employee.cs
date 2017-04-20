@@ -2,35 +2,24 @@
 {
 	public class Employee 
 	{
-		private int _empId;
-		private string _name;
-		private string _address;
-
-		public Employee(int empId, string name, string address)
+	    public Employee(int empId, string name, string address)
 		{
-			this._empId = empId;
-			this._name = name;
-			this._address = address;
+			this.EmpId = empId;
+			this.Name = name;
+			this.Address = address;
 
 		}
 
-		public int EmpId => _empId;
-		public string Name
-		{
-			get { return _name; }
-			set { _name = value; }
-		}
+		public int EmpId { get; }
 
-		public string Address
-		{
-			get { return _address; }
-			set { _address = value; }
-		}
+	    public string Name { get; set; }
 
-		public PaymentSchedule Schedule { get; set; }
+	    public string Address { get; set; }
+
+	    public PaymentSchedule Schedule { get; set; }
 		public PaymentClassification Classification { get; set; }
 		public PaymentMethod Method { get; set; }
-		public UnionAffiliation Affiliation { get; set; }
+		public Affiliation Affiliation { get; set; }
 		
 	}
 }
