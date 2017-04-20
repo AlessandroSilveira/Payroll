@@ -2,15 +2,24 @@
 
 namespace Payroll
 {
-	public class UnionAffiliation
+	public class UnionAffiliation : Affiliation
 	{
-		public DateTime Date { get; }
+		public int MemberId { get; }
+		public double Dues { get; set; }
 
-		public double Charge { get; }
-
-		public ServiceCharge GetServiceCharge(DateTime dateTime)
+		public UnionAffiliation(int memberId, double dues)
 		{
-			return new ServiceCharge(Date, Charge);
+			MemberId = memberId;
+			Dues = dues;
+		}
+
+		public UnionAffiliation()
+		{
+		}
+
+		public ServiceCharge GetServiceCharge(DateTime dateTime, double charge)
+		{
+			return new ServiceCharge(DateTime.Now, charge);
 		}
 
 		public void AddServiceCharge(ServiceCharge serviceCharge)

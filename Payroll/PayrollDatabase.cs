@@ -9,10 +9,9 @@ namespace Payroll
 		//Usando o design pattern FAÇADE
 
 		private static Hashtable _employees = new Hashtable();
-		//private static Hashtable _timeCards = new Hashtable();
-		//private static Hashtable _salesReceipties = new Hashtable();
 		private static Hashtable _unionAffiliation = new Hashtable();
-		//private static Hashtable _serviceCharge = new Hashtable();
+		
+
 
 		public static void AddEmployee(int id, Employee employee)
 		{
@@ -29,22 +28,7 @@ namespace Payroll
 			_employees.Remove(empId);
 		}
 
-		//public static void AddTimeCard(int id,TimeCard timeCard)
-		//{
-		//	_timeCards[id] = timeCard;
-		//}
-
-		//public static void AddSalesReceipt(int id, SalesReceipt salesReceipt)
-		//{
-		//	_salesReceipties[id] = salesReceipt;
-		//}
-
-
-		//public static SalesReceipt GetSalesReceipt(int id, DateTime dateTime)
-		//{
-		//	return _salesReceipties[id] as SalesReceipt;
-		//}
-
+		
 		public static void AddUnionMember(int id, Employee employee)
 		{
 			_unionAffiliation[id] = employee;
@@ -55,9 +39,12 @@ namespace Payroll
 			return _unionAffiliation[id] as Employee;
 		}
 
-		//public static void AddServiceCharge(int id,ServiceCharge serviceCharge)
-		//{
-		//	_serviceCharge[id] = serviceCharge;
-		//}
+		
+		public static void RemoveUnionMember(int memberId)
+		{
+			_unionAffiliation.Remove(memberId);
+		}
+
+		
 	}
 }

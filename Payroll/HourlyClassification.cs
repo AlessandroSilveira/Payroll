@@ -4,23 +4,17 @@ namespace Payroll
 {
 	public class HourlyClassification : PaymentClassification
 	{
-		private static double _hourlyRate;
-		private double hourlyRate;
-
-		public HourlyClassification()
-		{
-			double hourlyRate = 0;
-			_hourlyRate = hourlyRate;
-		}
+		private readonly double _hourlyRate;
 
 		public HourlyClassification(double hourlyRate)
 		{
-			this.hourlyRate = hourlyRate;
+			this._hourlyRate = hourlyRate;
 		}
-
-		public double HourlyRate => _hourlyRate;
+		
+		
 
 		public double Salary => _hourlyRate * 8.0;
+		public double HourlyRate { get; set; }
 
 		public void AddTimeCard(TimeCard timeCard)
 		{

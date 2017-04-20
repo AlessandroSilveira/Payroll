@@ -11,7 +11,7 @@
 
 		protected override PaymentClassification MakeClassification()
 		{
-			return new HourlyClassification();
+			return new HourlyClassification(_hourlyRate);
 		}
 
 		protected override PaymentSchedule MakeSchedule()

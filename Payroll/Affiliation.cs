@@ -1,6 +1,7 @@
 ﻿namespace Payroll
 {
-    public class Affiliation
-    {
-    }
+	public interface Affiliation {
+		double CalculateDeductions(PayCheck payCheck);
+	}
+	
 }

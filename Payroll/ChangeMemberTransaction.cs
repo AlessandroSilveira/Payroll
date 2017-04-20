@@ -1,21 +1,22 @@
 ﻿namespace Payroll
 {
-    public class ChangeMemberTransaction : ITransaction
+    public class ChangeMemberTransaction : ChangeAffiliationTransaction
     {
-        private int _empId;
-        private int _memberId;
-        private double v;
+	    private readonly int memberId;
+	    private readonly double dues;
+	   
+		
+	    public ChangeMemberTransaction(int empId, int memberId, double dues) :base(empId)
+		{
+			this.memberId = memberId;
+			this.dues = dues;
+		}
 
-        public ChangeMemberTransaction(int empId, int memberId, double v)
-        {
-            this._empId = empId;
-            this._memberId = memberId;
-            this.v = v;
-        }
+		protected override Affiliation Affiliation => new UnionAffiliation(memberId,dues);
 
-        public void Execute()
-        {
-            throw new System.NotImplementedException();
-        }
+	    protected override void RecordMembership(Employee e)
+	    {
+		    PayrollDatabase.AddUnionMember(memberId,e);
+	    }
     }
 }
