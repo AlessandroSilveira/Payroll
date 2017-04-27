@@ -2,15 +2,16 @@
 {
 	public  class ChangeHourlyTransaction : ChangeClassificationTransaction
 	{
-		public readonly double hourlyRate;
+		public readonly double HourlyRate;
 
 		public ChangeHourlyTransaction(int empId, double hourlyRate ) : base(empId)
 		{
-			this.hourlyRate = hourlyRate;
+			this.HourlyRate = hourlyRate;
 		}
 
 
-		protected override PaymentClassification Classification => new HourlyClassification(hourlyRate);
-		protected override PaymentSchedule Schedule => new PaymentSchedule();
+		protected override PaymentClassification Classification => new HourlyClassification(HourlyRate);
+		protected override PaymentSchedule Schedule => new PaymentSchedule()
+			;
 	}
 }

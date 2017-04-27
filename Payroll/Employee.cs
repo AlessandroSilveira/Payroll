@@ -13,12 +13,9 @@ namespace Payroll
 		}
 
 		public int EmpId { get; }
-
 	    public string Name { get; set; }
-
 	    public string Address { get; set; }
-
-	    public PaymentSchedule Schedule { get; set; }
+	    public PaymentSchedule schedule { get; set; }
 		public PaymentClassification Classification { get; set; }
 		public PaymentMethod Method { get; set; }
 		public Affiliation Affiliation { get; set; }
@@ -37,9 +34,14 @@ namespace Payroll
 			Method.Pay(payCheck);
 		}
 
-		public bool IsPayDate(DateTime payDate)
+		public bool IsPayDate(DateTime date)
 		{
-			throw new NotImplementedException();
+			return schedule.IsPayDate(date);
+		}
+
+		public DateTime GetPayPeriodStartDate(DateTime date)
+		{
+			return schedule.GetPayPeriodStartDate(date);
 		}
 	}
 }

@@ -30,7 +30,7 @@ namespace Payroll
 			var e = new Employee(_empId, _name, _address)
 			{
 				Classification = pc,
-				Schedule = ps,
+				schedule = ps,
 				Method = pm
 			};
 

@@ -45,6 +45,10 @@ namespace Payroll
 			_unionAffiliation.Remove(memberId);
 		}
 
-		
+
+		public static ArrayList GetAllEmployeeIds()
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

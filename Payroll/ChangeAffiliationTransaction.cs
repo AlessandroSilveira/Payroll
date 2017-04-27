@@ -4,7 +4,6 @@
 	{
 		protected ChangeAffiliationTransaction(int empId) : base(empId)
 		{
-			
 		}
 
 		protected override void Change(Employee e)

@@ -60,6 +60,7 @@
     <Compile Include="ChangeSalariedTransaction.cs" />
     <Compile Include="ChangeUnaffiliatedTransaction.cs" />
     <Compile Include="CommissionedClassification.cs" />
+    <Compile Include="DateUtil.cs" />
     <Compile Include="DeleteEmployee.cs" />
     <Compile Include="DeleteEmployeeTransaction.cs" />
     <Compile Include="Employee.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="MonthlySchedule.cs" />
     <Compile Include="NoAffiliation.cs" />
     <Compile Include="PayCheck.cs" />
+    <Compile Include="PaydayTransaction.cs" />
     <Compile Include="PaymentClassification.cs" />
     <Compile Include="PaymentMethod.cs" />
     <Compile Include="PaymentSchedule.cs" />

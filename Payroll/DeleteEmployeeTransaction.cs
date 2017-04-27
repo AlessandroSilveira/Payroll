@@ -2,16 +2,15 @@
 {
 	public class DeleteEmployeeTransaction :DeleteEmployee, ITransaction
 	{
-		private readonly int _empId;
+		private static readonly int id;
 
-		public DeleteEmployeeTransaction(int empId) :base(empId)
+		public DeleteEmployeeTransaction(int empId) :base(id)
 		{
-			_empId = empId;
 		}
 
 		public void Execute()
 		{
-			PayrollDatabase.DeleteEmployee(_empId);
+			PayrollDatabase.DeleteEmployee(id);
 		}
 	}
 }

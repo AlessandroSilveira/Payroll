@@ -55,7 +55,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="MonthlySchedule.cs" />
-    <Compile Include="PaydayTransaction.cs" />
     <Compile Include="PayrollTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
